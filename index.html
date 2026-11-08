@@ -492,24 +492,24 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 79; pointer-event
 .case-head .metas { display: flex; justify-content: space-between; gap: 24px 48px; }
 .case-head .metas > div { flex: 0 1 auto; max-width: 300px; }
 @media (max-width: 720px) { .case-head .metas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; } .case-head .metas > div { max-width: none; } }
+.topwrap.on-hero.stuck{background:#1535CD!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-bottom-color:transparent!important}
 </style>
 
 </head><body>
 <div class="topwrap" id="topwrap"><header class="top gut">
-    <a class="brand" href="#top" aria-label="Back to top">BN</a>
+    <a class="brand" href="#top">Ben Nakic</a>
     <nav class="nav" aria-label="Main">
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header></div>
-<div class="progress" id="prog" aria-hidden="true"></div>
 <div class="page">
 
   <main id="home">
     <section class="hx field" id="top">
       <div class="hx-main">
-        <p class="hx-kicker"><span class="sq" aria-hidden="true"></span>Ben Nakic<span class="rule" aria-hidden="true"></span></p>
+        
         <h1 class="hx-title">Senior product designer based in Melbourne. <span class="soft">Currently untangling school software for teachers, families and school offices.</span></h1>
       </div>
       <dl class="hx-meta">
@@ -926,7 +926,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 79; pointer-event
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var cases = { 'design-system': 'Design System', 'marksbook': 'Marksbook', 'parent-teacher-interviews': 'Parent–teacher interviews', 'attendance': 'Attendance', 'wellbeing': 'Wellbeing single view' };
   var home = document.getElementById('home'), homeArmed = false, rvio = null;
-  var topwrap = document.getElementById('topwrap'), prog = document.getElementById('prog'), cur = document.getElementById('cur');
+  var topwrap = document.getElementById('topwrap'), cur = document.getElementById('cur');
 
   function arm(nodes) {
     if (reduce || !('IntersectionObserver' in window)) return;
@@ -971,7 +971,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 79; pointer-event
   var root = document.documentElement, lastY = window.scrollY, lastNav = lastY, covers = Array.prototype.slice.call(document.querySelectorAll('.proj .shot img'));
   function onScroll() {
     var y = window.scrollY, max = root.scrollHeight - window.innerHeight;
-    prog.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
+    
     topwrap.classList.toggle('stuck', y > 8);
     var fieldTop = home.hidden ? document.querySelector('.case:not([hidden]) .case-head') : hx;
     topwrap.classList.toggle('on-hero', !!fieldTop && fieldTop.getBoundingClientRect().bottom > 72);
